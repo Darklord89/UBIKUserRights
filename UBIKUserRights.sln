@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBIKUserRights", "UBIKUserRights\UBIKUserRights.csproj", "{8B5EB1BA-C3C8-494A-B00C-063E7B5168F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBIKUserRightsTests", "UBIKUserRightsTests\UBIKUserRightsTests.csproj", "{848959E3-0199-4C5C-9110-45E198512ACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B5EB1BA-C3C8-494A-B00C-063E7B5168F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5EB1BA-C3C8-494A-B00C-063E7B5168F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5EB1BA-C3C8-494A-B00C-063E7B5168F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5EB1BA-C3C8-494A-B00C-063E7B5168F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{848959E3-0199-4C5C-9110-45E198512ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848959E3-0199-4C5C-9110-45E198512ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848959E3-0199-4C5C-9110-45E198512ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848959E3-0199-4C5C-9110-45E198512ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C92E703-1BC9-4AE7-8339-9E4949AE5796}
+	EndGlobalSection
+EndGlobal
