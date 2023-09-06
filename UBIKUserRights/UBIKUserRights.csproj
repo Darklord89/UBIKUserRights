@@ -66,6 +66,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /d $(TargetDir)* F:\UBIK\UBIK.Studio-3.7.1.15579\injection\</PostBuildEvent>
+    <PostBuildEvent>xcopy /y /d $(ProjectDir)$(OutDir)* F:\UBIK\UBIK.Studio-3.7.1.15579\injection\</PostBuildEvent>
   </PropertyGroup>
 </Project>
