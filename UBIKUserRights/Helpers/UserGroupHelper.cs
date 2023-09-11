@@ -36,6 +36,7 @@ namespace UBIKUserRights.Helpers
 
         private static void LoadUserGroups()
         {
+            DateTime dateTime = DateTime.Now;
             UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                 8,
                 "Loading usergroups to the catche...",
@@ -61,6 +62,11 @@ namespace UBIKUserRights.Helpers
                     }
                 }
             }
+
+            UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                9,
+                $"Usergroups were loaded in {DateTime.Now - dateTime}...",
+                null);
         }
 
         internal static GroupRight CreateGroupRight(UserGroup group, UserRights right)
