@@ -11,27 +11,28 @@ namespace UBIKUserRights.Helpers
         private static Dictionary<string, UserGroup> userGroups = new Dictionary<string, UserGroup>();
         private static readonly object userGroupsLock = new object();
 
-        internal static UserGroup GetUserGroup(string groupName)
+        internal static UserGroup GetUserGroup(string groupName, int coutner = 0)
         {
-            if (userGroups.TryGetValue(groupName, out var userGroup))
+            lock (userGroupsLock)
             {
-                UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
-                    7,
-                    $"Returning group for groupname {groupName} -> {userGroup.Name} {userGroup.Description} ({userGroup.ID}).",
-                    null);
-                lock (userGroupsLock)
+                if (userGroups.Count > 0)
                 {
-                    return userGroup;
+                    if (userGroups.TryGetValue(groupName, out var userGroup))
+                    {
+                        UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                            7,
+                            $"Returning group for groupname {groupName} -> {userGroup.Name} {userGroup.Description} ({userGroup.ID}).",
+                            null);
+                        return userGroup;
+                    }
                 }
-            }
-            else
-            {
-                lock(userGroupsLock)
+                else
                 {
                     LoadUserGroups();
+                    return coutner > 1 ? null : GetUserGroup(groupName, ++coutner);
                 }
-                return GetUserGroup(groupName);
             }
+            return null;
         }
 
         private static void LoadUserGroups()
@@ -42,7 +43,7 @@ namespace UBIKUserRights.Helpers
                 "Loading usergroups to the catche...",
                 null);
 
-            MetaClass mc = UBIKUserRightsPlugin.UBIKEnvironment.UBIKDataFactory().MetaClasses().Where(w => w.Name == Settings.USERGROUP_NAME).First();
+            MetaClass mc = UBIKUserRightsPlugin.UBIKEnvironment.UBIKDataFactory().MetaClasses(Settings.USERGROUP_NAME).First();
 
             foreach (BaseClass bc in mc.AllInstances(null))
             {

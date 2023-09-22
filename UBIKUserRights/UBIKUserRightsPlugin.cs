@@ -11,7 +11,7 @@ namespace UBIKUserRights
     [ExportMetadata("Type", typeof(UBIKUserRightsPlugin))]
     [ExportMetadata("Name", "UBIKUserRights")]
     [ExportMetadata("Description", "User rights plugin for UBIK")]
-    [ExportMetadata("Version", 1)]
+    [ExportMetadata("Version", 3)]
     [ExportMetadata("Company", "Siemens s.r.o.")]
     [ExportMetadata("Copyright", "2023, Siemens s.r.o.")]
     [ExportMetadata("MinimumKernelVersion", "3.6.0.0")]
