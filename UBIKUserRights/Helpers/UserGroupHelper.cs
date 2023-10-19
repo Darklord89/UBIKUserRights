@@ -86,12 +86,18 @@ namespace UBIKUserRights.Helpers
 
         internal static GroupRight[] GetGroupRightsForAllExcept(UserGroup[] group, UserRights userRights)
         {
-            return userGroups.Values.Except(group).Select(x => CreateGroupRight(x, userRights)).ToArray();
+            lock (userGroupsLock)
+            {
+                return userGroups.Values.Except(group).Select(x => CreateGroupRight(x, userRights)).ToArray();
+            }
         }
 
         internal static UserGroup[] GetAllGroups(UserGroup[] exceptGroups = null)
         {
-            return exceptGroups == null ? userGroups.Values.ToArray() : userGroups.Values.Except(exceptGroups).ToArray();
+            lock (userGroupsLock)
+            {
+                return exceptGroups == null ? userGroups.Values.ToArray() : userGroups.Values.Except(exceptGroups).ToArray();
+            }
         }
     }
 }
