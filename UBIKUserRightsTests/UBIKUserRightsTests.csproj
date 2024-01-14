@@ -47,7 +47,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="UBIK.Kernel.Content">
-      <HintPath>F:\UBIK\UBIK.Studio-3.7.1.15579\UBIK.Kernel.Content.dll</HintPath>
+      <HintPath>..\UBIKUserRights\ExternalDLL\UBIK.Kernel.Content.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>

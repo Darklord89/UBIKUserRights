@@ -51,11 +51,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ExternalDLL\UBIK.Kernel.dll</HintPath>
     </Reference>
+    <Reference Include="UBIK.Kernel.Content, Version=4.5.0.0, Culture=neutral, PublicKeyToken=d5616e23d38cb159, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDLL\UBIK.Kernel.Content.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\UserGroupHelper.cs" />
     <Compile Include="Model\JsonRights.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="SystemDefinitons\UserRightsSystemDefinitionProvider.cs" />
     <Compile Include="UBIKUserRightsPlugin.cs" />
     <Compile Include="UserRightsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +71,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="ExternalDLL\UBIK.Injection.dll" />
+    <Content Include="ExternalDLL\UBIK.Kernel.Content.dll" />
     <Content Include="ExternalDLL\UBIK.Kernel.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
