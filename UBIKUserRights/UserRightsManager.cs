@@ -35,10 +35,10 @@ namespace UBIKUserRights
                         UserGroup group = UserGroupHelper.GetUserGroup(writeRight);
                         if (group != null)
                         {
-                            UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                            /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                                 4,
                                 $"Adding WRITE right for user group {group.Name} {group.Description} ({group.ID}).",
-                                null);
+                                null);*/
                             users.Add(group);
                             rights.Add(UserGroupHelper.CreateGroupRight(group, UserRights.Write));
                         }
@@ -48,10 +48,10 @@ namespace UBIKUserRights
                     {
                         foreach (UserGroup group in UserGroupHelper.GetAllGroups(users.ToArray()))
                         {
-                            UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                            /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                                 5,
                                 $"Adding READ (ALL) right for user group {group.Name} {group.Description} ({group.ID}).",
-                                null);
+                                null);*/
                             users.Add(group);
                             rights.Add(UserGroupHelper.CreateGroupRight(group, UserRights.Read));
                         }
@@ -63,10 +63,10 @@ namespace UBIKUserRights
                             UserGroup group = UserGroupHelper.GetUserGroup(readRight);
                             if (group != null)
                             {
-                                UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                                /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                                     6,
                                     $"Adding READ right for user group {group.Name} {group.Description} ({group.ID}).",
-                                    null);
+                                    null);*/
                                 users.Add(group);
                                 rights.Add(UserGroupHelper.CreateGroupRight(group, UserRights.Read));
                             }
@@ -75,19 +75,19 @@ namespace UBIKUserRights
 
                     foreach (GroupRight group in UserGroupHelper.GetGroupRightsForAllExcept(users.ToArray(), UserRights.NoRight))
                     {
-                        UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                        /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                             6,
                             $"Adding NORIGHT right for user group {group.GroupID}.",
-                            null);
+                            null);*/
                         rights.Add(group);
                     }
                 }
             }
 
-            UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+            /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                 3,
                 "Empty json string, returning null.",
-                null);
+                null);*/
             
             return rights;
         }

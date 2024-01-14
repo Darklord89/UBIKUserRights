@@ -43,14 +43,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="UBIK.Injection">
-      <HintPath>F:\UBIK\UBIK.Studio-3.7.1.15579\UBIK.Injection.dll</HintPath>
+    <Reference Include="UBIK.Injection, Version=4.5.0.0, Culture=neutral, PublicKeyToken=9dbfe38584ad0623, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDLL\UBIK.Injection.dll</HintPath>
     </Reference>
-    <Reference Include="UBIK.Kernel">
-      <HintPath>F:\UBIK\UBIK.Studio-3.7.1.15579\UBIK.Kernel.dll</HintPath>
-    </Reference>
-    <Reference Include="UBIK.Kernel.Content">
-      <HintPath>F:\UBIK\UBIK.Studio-3.7.1.15579\UBIK.Kernel.Content.dll</HintPath>
+    <Reference Include="UBIK.Kernel, Version=4.5.0.0, Culture=neutral, PublicKeyToken=c28313fe51c12534, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDLL\UBIK.Kernel.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ExternalDLL\UBIK.Injection.dll" />
+    <Content Include="ExternalDLL\UBIK.Kernel.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

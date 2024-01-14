@@ -8,7 +8,7 @@ namespace UBIKUserRights.Helpers
 {
     internal static class UserGroupHelper
     {
-        private static Dictionary<string, UserGroup> userGroups = new Dictionary<string, UserGroup>();
+        private static readonly Dictionary<string, UserGroup> userGroups = new Dictionary<string, UserGroup>();
         private static readonly object userGroupsLock = new object();
 
         internal static UserGroup GetUserGroup(string groupName, int coutner = 0)
@@ -19,10 +19,10 @@ namespace UBIKUserRights.Helpers
                 {
                     if (userGroups.TryGetValue(groupName, out var userGroup))
                     {
-                        UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                        /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                             7,
                             $"Returning group for groupname {groupName} -> {userGroup.Name} {userGroup.Description} ({userGroup.ID}).",
-                            null);
+                            null);*/
                         return userGroup;
                     }
                 }
@@ -38,10 +38,10 @@ namespace UBIKUserRights.Helpers
         private static void LoadUserGroups()
         {
             DateTime dateTime = DateTime.Now;
-            UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+            /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                 8,
                 "Loading usergroups to the catche...",
-                null);
+                null);*/
 
             MetaClass mc = UBIKUserRightsPlugin.UBIKEnvironment.UBIKDataFactory().MetaClasses(Settings.USERGROUP_NAME).First();
 
@@ -52,10 +52,10 @@ namespace UBIKUserRights.Helpers
                     try
                     {
                         userGroups.Add(key, bc as UserGroup);
-                        UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+                        /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                             9,
                             $"UserGroup {bc.Name} {bc.Description} ({bc.ID}) was added to the collection catche.",
-                            null);
+                            null);*/
                     }
                     catch (Exception ex)
                     {
@@ -64,10 +64,10 @@ namespace UBIKUserRights.Helpers
                 }
             }
 
-            UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
+            /*UBIKKernel.LogDebugOutput(System.Reflection.MethodBase.GetCurrentMethod(),
                 9,
                 $"Usergroups were loaded in {DateTime.Now - dateTime}...",
-                null);
+                null);*/
         }
 
         internal static GroupRight CreateGroupRight(UserGroup group, UserRights right)

@@ -15,46 +15,8 @@ namespace UBIKUserRights
     [ExportMetadata("Company", "Siemens s.r.o.")]
     [ExportMetadata("Copyright", "2023, Siemens s.r.o.")]
     [ExportMetadata("MinimumKernelVersion", "3.6.0.0")]
-    public class UBIKUserRightsPlugin :
-        ISessionAwareUbikModule,
-        IUbikModule,
-        IUbikPlugin
+    public class UBIKUserRightsPlugin : IUbikPlugin
     {
-        public static UBIKEnvironment UBIKEnvironment { get; private set; }
-
-        public void Initialize(UBIKEnvironment environment)
-        {
-            UBIKEnvironment = environment;
-        }
-
-        public bool Initialized()
-        {
-            return UBIKEnvironment != null;
-        }
-
-        public IEnumerable<SelectiveList> InjectedSelectiveLists()
-        {
-            return new SelectiveList[0];
-        }
-
-        public IEnumerable<SystemClassifications> InjectedSystemClassifications()
-        {
-            return new SystemClassifications[0];
-        }
-
-        public string SystemRuntypeName(MetaClass metaClass)
-        {
-            return null;
-        }
-
-        public void Terminate(UBIKEnvironment environment)
-        {
-            Terminate();
-        }
-
-        public void Terminate()
-        {
-            return;
-        }
+        
     }
 }
