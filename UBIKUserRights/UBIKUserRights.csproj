@@ -61,6 +61,7 @@
     <Compile Include="Model\JsonRights.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SystemDefinitons\UserRightsSystemDefinitionProvider.cs" />
+    <Compile Include="SystemDefinitons\UserRightsSystemDefinition_V450.cs" />
     <Compile Include="UBIKUserRightsPlugin.cs" />
     <Compile Include="UserRightsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

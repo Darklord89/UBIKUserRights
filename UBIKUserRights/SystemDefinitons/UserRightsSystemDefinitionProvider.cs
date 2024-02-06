@@ -18,7 +18,7 @@ namespace UBIKUserRights.SystemDefinitons
         private UserRightsSystemDefinitionProvider()
             : base(new ISystemDefinitions[]
             {
-                
+                new UserRightsSystemDefinition_V450()
             })
         { }
     }
